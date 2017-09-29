@@ -19,8 +19,7 @@
 # Load Standard Libraries      #
 ################################
 # This section loads the packages necessary to run the data processing
-libraries <- c("rhdf5", 
-               "rgdal",
+libraries <- c("rgdal",
                "gdalUtils",
                "rgeos",
                "maptools",
@@ -42,12 +41,20 @@ libraries <- c("rhdf5",
                "dplyr"
                # "animation"
 )
-#Install Packages that are not already installed:
+
+# Install Packages that are not already installed:
 for (i in 1:length(libraries) ) {
   if ( !require(libraries[i], character.only=TRUE) ) {
     install.packages(libraries[i])
   }
 }
+
+# Packages from the bioconductor repo:
+if ( !require("rhdf5", character.only=TRUE) ) {
+  source("https://bioconductor.org/biocLite.R")
+  biocLite("rhdf5")
+}
+
 # Load the libraries:
 lapply(libraries, library, character.only=TRUE)
 
