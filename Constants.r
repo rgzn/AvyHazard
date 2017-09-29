@@ -10,10 +10,11 @@
 
 # File Name and Directory Consants
 ##########################
+allCollarDataFile <- "AllCollarLocations.Rda"
 rasterDir <- "./data/raster/"
 gisDir <- "./gis/"
 dataSourceDir <- "./data/HDF5/"
-YEAR_ZERO <- 2003   
+YEAR_ZERO <- 2003
 ##########################
 
 # Recovery Unit Definitions

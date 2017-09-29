@@ -32,7 +32,7 @@ years <- as.integer(gsub(".*([0-9]{4}).*", "\\1", hazardFiles)) # data years
 ################################
 # Collar Data Prep             #
 ################################
-load("AllCollarLocations.Rda")  # R data file with all animal locations
+load(allCollarDataFile)  # R data file with all animal locations
 data.xy <- collar.data[c("UTM_E", "UTM_N")]
 coordinates(data.xy) <- ~UTM_E+UTM_N
 sppt <- SpatialPointsDataFrame(coordinates(data.xy),collar.data)
